@@ -7,9 +7,9 @@ import os
 MAX_MESSAGES = 500
 message_queue = deque(maxlen=MAX_MESSAGES)
 # Replace with TG bot's token
-BOT_TOKEN = ''
+BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 # set gemini token
-GEMINI_API_KEY = os.getenv('GOOGLE_API_KEY')
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 
 async def start(update: Update, context: CallbackContext):
     await update.message.reply_text('Hello! I\'m your summarize Bot. Usage: /summarize <number_of_messages>')
