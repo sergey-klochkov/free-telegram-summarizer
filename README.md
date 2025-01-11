@@ -1,5 +1,5 @@
-# telegram-gemini-summarizer
-Telegram Bot to summarize your chats with gemini
+# About
+Telegram Bot to summarize your chats with gemini. Can be used with gemini free tier
 
 # Setup
 Ensure you have python version >3.9
