@@ -1,7 +1,6 @@
 # About
-Telegram Bot to summarize your chats with gemini.
-
-Gemini provides free tier, so bot can be used for free.
+Telegram Bot to summarize your chats without need to download any model.
+This Bot uses Gemini API, which provides free tier.
 
 # Installation and Usage
 1. https://github.com/sergey-klochkov/free-telegram-summarizer-bot.git
