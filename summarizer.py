@@ -8,12 +8,11 @@ def init_gemini(api_key: Optional[str] = None) -> None:
     genai.configure(api_key=api_key)
 
 
-def summarize_text(text: str, api_key: Optional[str] = None) -> str:
+def summarize_text(text: str) -> str:
     try:
         if not text.strip():
             raise ValueError('Input text cannot be empty or just whitespace.')
 
-        init_gemini(api_key)
         prompt = f'Please summarize the following conversation in Russian language. Focus on the main points and key information:\n\n{text}'
 
         model = genai.GenerativeModel('gemini-2.0-flash-exp')

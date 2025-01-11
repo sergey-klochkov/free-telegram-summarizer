@@ -1,7 +1,7 @@
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, CallbackContext
 from collections import deque
-from summarizer import summarize_text
+from summarizer import summarize_text, init_gemini
 import os
 
 MAX_MESSAGES = 500
@@ -29,7 +29,7 @@ async def summarize(update: Update, context: CallbackContext):
         if messages_to_summarize:
             input_text = '\n'.join(messages_to_summarize)
             try:
-                full_summary = summarize_text(input_text, api_key=GEMINI_API_KEY)
+                full_summary = summarize_text(input_text)
                 await update.message.reply_text(f'\nSummary: {full_summary}')
 
             except Exception as e:
@@ -46,6 +46,8 @@ async def store(update: Update, context: CallbackContext):
 
 def main():
     application = Application.builder().token(BOT_TOKEN).build()
+    init_gemini(GEMINI_API_KEY)
+
     application.add_handler(CommandHandler('start', start))
     application.add_handler(CommandHandler('help', start))
     application.add_handler(CommandHandler('usage', start))
