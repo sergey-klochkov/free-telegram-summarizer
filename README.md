@@ -9,8 +9,8 @@ Ensure you have python version >3.9
 Install dependencies
 ```
 pip install -q -U google-generativeai
-
 pip install python-telegram-bot
+pip install python-dotenv
 ```
 
 # Tokens
