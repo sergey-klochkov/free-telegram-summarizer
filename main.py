@@ -3,7 +3,9 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 from collections import deque
 from summarizer import summarize_text, init_gemini
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 MAX_MESSAGES = 500
 message_queue = deque(maxlen=MAX_MESSAGES)
 # Replace with TG bot's token
