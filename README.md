@@ -1,5 +1,6 @@
 # About
 Telegram Bot to summarize your chats with gemini.
+
 Gemini provides free tier, so bot can be used for free.
 
 # Setup
